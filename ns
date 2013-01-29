@@ -1,0 +1,25 @@
+#! /bin/bash
+NOW=`date +"%d-%b-%y-"`
+
+if [ "$1" = "start" ]; then
+	node app >> logs/$NOW"node.log" &
+	compass watch >> logs/$NOW"compass.log" &
+	echo "Node and compass started"
+	exit 1
+fi
+
+if [ "$1" = "stop" ]; then
+	killall node
+	killall compass
+	echo "Killed all node and compass processes"
+	exit 1
+fi
+
+killall node
+killall compass
+echo "Killed all node and compass processes"
+
+node app >> logs/$NOW"node.log" &
+compass watch >> logs/$NOW"compass.log" &
+echo "Node and compass started"
+exit 1

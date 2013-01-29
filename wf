@@ -1,0 +1,4 @@
+#! /bin/bash
+# Saves the word frequencies into a file called freq
+
+LC_CTYPE=no_NO.UTF-8 tr -cs '[:alpha:]' '[\n*]' < $1 | tr '[:upper:]' '[:lower:]' | sort | uniq -c | sort -nr > freq

@@ -1,0 +1,3 @@
+#! /bin/bash
+
+gcc -g -Wall -pedantic -o $1 $1.c

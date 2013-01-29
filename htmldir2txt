@@ -1,0 +1,6 @@
+#! /bin/bash
+
+for f in ./*.htm*
+do
+	html2txt $f ISO-8859-1 >> merged.txt
+done

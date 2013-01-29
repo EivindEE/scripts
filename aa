@@ -1,0 +1,19 @@
+#! /bin/bash
+# A shell script that adds a new alias to the bash aliases file
+# Written by: Eivind Elseth
+# Last update on: 16.09.2012
+# ------------------------------
+
+if [ $# != 2 ] 
+	then
+		echo "Usage: `basename $0` alias_to_add \"command_mapped_to_alias\""
+		echo "Example: basename $0 cdd \"cd ..;cd ..\""
+		exit 0
+fi
+
+ALIAS_FILE=~/.bash_aliases
+BASH_PROFILE=~/.bash_profile
+SHORTCUT=$1
+ALIAS=$2
+
+echo alias $SHORTCUT=\'$ALIAS\' >> $ALIAS_FILE;
